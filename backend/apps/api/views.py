@@ -1,10 +1,13 @@
 from rest_framework import views, status
+from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from utils.notes import Note
 
 
 class CheckEnharmonicView(views.APIView):
     """Check if two notes are enharmonic"""
+
+    permission_classes = [AllowAny]
 
     def post(self, request, *args, **kwargs):
         note1_string = request.data.get("note1")
