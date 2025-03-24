@@ -10,7 +10,7 @@ export default function NavButton({
 }) {
   return (
     <Link href={`/${link}`}>
-      <div className="flex text-lg items-center justify-left p-2 px-3 rounded-lg hover:bg-cithara-bg transition-all cursor-pointer select-none my-2">
+      <div className="flex text-lg items-center justify-center p-2 px-3 rounded-lg hover:bg-cithara-bg/70 transition-all cursor-pointer select-none">
         {label}
       </div>
     </Link>

@@ -6,14 +6,16 @@
 }
 
 @theme {
-  --color-cithara-primary: rgb(214, 84, 62);
-  --color-cithara-bg: rgb(170, 50, 41);
+  --color-cithara-primary: rgb(237, 77, 56);
+  --color-cithara-bg: rgb(164, 29, 27);
+  --color-cithara-border-dark: rgb(164, 29, 27);
+  --color-cithara-border-light: rgb(252, 97, 66);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --font-funnel-display: var(--font-funnel-display);
   --font-funnel-sans: var(--font-funnel-sans);
 }
