@@ -1,12 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: var(--color-cithara-bg);
+  --foreground: #ffffff;
 }
 
 @theme {
-  --color-cithara-primary: rgb(214, 84, 62)
+  --color-cithara-primary: rgb(214, 84, 62);
+  --color-cithara-bg: rgb(170, 50, 41);
 }
 
 @theme inline {
@@ -15,13 +16,6 @@
   
   --font-funnel-display: var(--font-funnel-display);
   --font-funnel-sans: var(--font-funnel-sans);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: rgb(170, 50, 41);
-    --foreground: #ededed;
-  }
 }
 
 body {
