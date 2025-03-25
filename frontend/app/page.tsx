@@ -1,9 +1,11 @@
 import Button from "@/components/Button";
+import { IoIosArrowBack } from "react-icons/io";
 
 export default function Home() {
   return (
-    <div>
-      <Button link="test" label="Test"/>
-    </div>
+    <>
+      
+        <h1 className="self-center">CHORD LIST</h1>
+    </>
   );
 }

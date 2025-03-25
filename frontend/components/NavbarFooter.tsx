@@ -2,7 +2,6 @@ import React from "react";
 import Button from "./Button";
 import { FaGithub } from "react-icons/fa";
 import { FaUser } from "react-icons/fa6";
-import { IoChevronBackOutline } from "react-icons/io5";
 import { VscSettings } from "react-icons/vsc";
 
 export default function NavbarFooter() {

@@ -13,19 +13,31 @@ export default function Button({
   func?: CallableFunction;
 }) {
   return link ? (
-    <Link href={`${link}`}>
-      <div className="flex w-fit items-center justify-center p-2 hover:bg-cithara-border-light rounded-lg border border-cithara-border-light ring-cithara-bg ring-1 hover:border-white/20 shadow-md select-none cursor-pointer gap-2 transition-all">
-        {(icon || label) && <ButtonInner icon={icon} label={label} />}
-      </div>
+    <Link href={`${link}`} className="w-fit h-fit">
+      <ButtonInner icon={icon} label={label} />
     </Link>
   ) : (
-    <div className="flex w-fit items-center justify-center p-2 hover:bg-cithara-border-light rounded-lg border border-cithara-border-light ring-cithara-bg ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
-      {(icon || label) && <ButtonInner icon={icon} label={label} />}
+    <div className="flex w-fit h-fit items-center justify-center p-2 hover:bg-cithara-border-light rounded-lg border border-cithara-border-light ring-cithara-bg ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
+      <ButtonInner icon={icon} label={label} />
     </div>
   );
 }
 
 function ButtonInner({
+  icon,
+  label,
+}: {
+  icon?: React.ReactNode;
+  label?: string;
+}) {
+  return (
+    <div className="flex w-fit h-fit items-center justify-center p-2 hover:bg-cithara-border-light rounded-lg border border-cithara-border-light ring-cithara-bg ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
+      {(icon || label) && <ButtonLabel icon={icon} label={label} />}
+    </div>
+  );
+}
+
+function ButtonLabel({
   icon,
   label,
 }: {
