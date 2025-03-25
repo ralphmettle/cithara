@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 import Button from "@/components/Button";
 import { IoIosArrowBack } from "react-icons/io";
 

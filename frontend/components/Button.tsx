@@ -5,12 +5,12 @@ export default function Button({
   label,
   link,
   icon,
-  func,
+  // func,
 }: {
   label?: string;
   link?: string;
   icon?: React.ReactNode;
-  func?: CallableFunction;
+  // func?: CallableFunction;
 }) {
   return link ? (
     <Link href={`${link}`} className="w-fit h-fit">
