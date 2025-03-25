@@ -1,6 +1,5 @@
 import Link from "next/link";
 import React from "react";
-import { GiButtonFinger } from "react-icons/gi";
 
 export default function Button({
   label,
@@ -30,7 +29,7 @@ function ButtonInner({
   label?: string;
 }) {
   return (
-    <div className="flex w-fit h-fit items-center justify-center p-2 hover:bg-cithara-border-light rounded-lg border border-cithara-border-light ring-cithara-bg ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
+    <div className="flex w-fit h-fit items-center justify-center p-2 bg-cithara-primary hover:bg-cithara-border-light rounded-lg border border-cithara-border-light ring-cithara-bg ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
       {(icon || label) && <ButtonLabel icon={icon} label={label} />}
     </div>
   );

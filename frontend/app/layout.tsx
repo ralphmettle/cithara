@@ -34,10 +34,10 @@ export default function RootLayout({
         <div className="flex flex-row justify-center items-center h-screen w-full py-2">
           <Navbar />
           <div className="flex grow h-full w-full p-4 mr-2 rounded-2xl bg-cithara-primary border border-cithara-border-light shadow-2xl">
-            <div className="absolute w-fit h-fit">
+            <div className="absolute w-fit h-fit z-100">
               <Button link="#" icon={<IoIosArrowBack className="w-4 h-4" />} />
             </div>
-            {children}
+            <div className="z-0 relative w-full h-full">{children}</div>
           </div>
         </div>
       </body>
