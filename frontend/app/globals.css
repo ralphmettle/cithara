@@ -1,16 +1,23 @@
 @import "tailwindcss";
 
-:root {
-  --background: var(--color-cithara-bg);
-  --foreground: #ffffff;
+@theme {
+  --color-cithara-primary: hsl(7, 83%, 57%);
+  --color-cithara-bg: hsl(1, 72%, 37%);
+  --color-cithara-text: hsl(1, 10%, 95%);
+
+  --color-cithara-panel: hsl(7, 83%, 57%);
+  --color-cithara-panel-border: hsl(10, 97%, 62%);
+
+  --color-cithara-button: hsl(7, 83%, 57%);
+  --color-cithara-border-outer: hsl(1, 72%, 37%);
+  --color-cithara-border-inner: hsl(10, 97%, 62%);
 }
 
-@theme {
-  --color-cithara-primary: rgb(237, 77, 56);
-  --color-cithara-bg: rgb(164, 29, 27);
-  --color-cithara-border-dark: rgb(164, 29, 27);
-  --color-cithara-border-light: rgb(252, 97, 66);
+:root {
+  --background: var(--color-cithara-bg);
+  --foreground: var(--color-cithara-text);
 }
+
 
 @theme inline {
   --color-background: var(--background);
