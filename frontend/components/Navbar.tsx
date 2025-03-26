@@ -1,7 +1,8 @@
 import React from "react";
-import NavButton from "./NavButton";
 import Link from "next/link";
+
 import NavbarFooter from "./NavbarFooter";
+import NavButton from "./NavButton";
 
 import { TbPiano } from "react-icons/tb";
 
@@ -14,8 +15,8 @@ export default function Navbar() {
           <h1>Cithara</h1>
         </button>
       </Link>
-      <div className="flex flex-col h-full gap-3 py-4 px-2 w-full my-6 rounded-xl shadow-md bg-cithara-button border border-cithara-border-inner ring-cithara-border-outer ring-1 ">
-        <NavButton label="Chords" link="chords" />
+      <div className="flex flex-col h-full gap-3 p-4 w-full my-6 rounded-xl shadow-md bg-cithara-button border border-cithara-border-inner ring-cithara-border-outer ring-1 ">
+        <NavButton label="Chords" link="/chords" />
         <NavButton label="Notes" link="#" />
         <NavButton label="Favourites" link="#" />
         <NavButton label="Repository" link="#" />

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-export default function Button({
+export default function DestructiveButton({
   onClick,
   label,
   link,
@@ -14,14 +14,14 @@ export default function Button({
 }) {
   return link ? (
     <Link href={`${link}`} className="w-fit h-fit">
-      <ButtonInner onClick={onClick} icon={icon} label={label} />
+      <DestructiveButtonInner onClick={onClick} icon={icon} label={label} />
     </Link>
   ) : (
-    <ButtonInner onClick={onClick} icon={icon} label={label} />
+    <DestructiveButtonInner onClick={onClick} icon={icon} label={label} />
   );
 }
 
-function ButtonInner({
+function DestructiveButtonInner({
   onClick,
   icon,
   label,
@@ -33,14 +33,14 @@ function ButtonInner({
   return (
     <div
       onClick={onClick}
-      className="flex w-fit h-fit items-center justify-center p-2 gap-2 bg-cithara-button hover:bg-cithara-border-inner rounded-lg border border-cithara-border-inner ring-cithara-border-outer ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all"
+      className="flex w-fit h-fit items-center justify-center p-2 gap-2 bg-red-600 hover:bg-red-500 rounded-lg border border-red-500 ring-red-800 ring-1 hover:border-red-400 shadow-md select-none cursor-pointer transition-all"
     >
-      {(icon || label) && <ButtonLabel icon={icon} label={label} />}
+      {(icon || label) && <DestructiveButtonLabel icon={icon} label={label} />}
     </div>
   );
 }
 
-function ButtonLabel({
+function DestructiveButtonLabel({
   icon,
   label,
 }: {

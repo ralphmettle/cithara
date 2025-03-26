@@ -14,3 +14,5 @@
 - [ ] Facilitate API calls to backend for note/chord objects
 - [ ] Figure out storage/caching strategy for note objects to reduce API calls
 - [ ] Implement theming functionality
+- [ ] Make design responsive
+- [ ] Properly differentiate DestructiveButton component
