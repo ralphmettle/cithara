@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
 import { IoIosArrowBack } from "react-icons/io";
-import SettingsModal from "@/components/SettingsModal";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
