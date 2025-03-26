@@ -29,7 +29,7 @@ function ButtonInner({
   label?: string;
 }) {
   return (
-    <div className="flex w-fit h-fit items-center justify-center p-2 bg-cithara-button hover:bg-cithara-border-inner rounded-lg border border-cithara-border-inner ring-cithara-border-dark ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
+    <div className="flex w-fit h-fit items-center justify-center p-2 bg-cithara-button hover:bg-cithara-border-inner rounded-lg border border-cithara-border-inner ring-cithara-border-outer ring-1 hover:border-white/20 shadow-md select-none cursor-pointer transition-all">
       {(icon || label) && <ButtonLabel icon={icon} label={label} />}
     </div>
   );
