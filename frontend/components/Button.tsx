@@ -1,21 +1,27 @@
-import Link from "next/link";
+import Link from "next/Link";
 import React from "react";
 
 export default function Button({
   onClick,
   label,
-  link,
+  externalLink,
+  internalLink,
   icon,
 }: {
   onClick?: () => void;
   label?: string;
-  link?: string;
+    externalLink?: string;
+    internalLink?: string;
   icon?: React.ReactNode;
 }) {
-  return link ? (
-    <Link href={`${link}`} className="w-fit h-fit">
+  return internalLink ? (
+    <Link href={`${internalLink}`} className="w-fit h-fit">
       <ButtonInner onClick={onClick} icon={icon} label={label} />
     </Link>
+  ) : externalLink ? (
+    <a href={`${externalLink}`} target="_blank" rel="noopener noreferrer" className="w-fit h-fit">
+      <ButtonInner onClick={onClick} icon={icon} label={label} />
+    </a>
   ) : (
     <ButtonInner onClick={onClick} icon={icon} label={label} />
   );

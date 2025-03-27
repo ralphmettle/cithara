@@ -7,7 +7,7 @@
 
 ## Frontend
 
-- [ ] Refactor button component for external links to open in new tab
+- [x] Refactor button component for external links to open in new tab
 - [ ] Create settings modal content
 - [ ] Create components for notes
 - [ ] Create components for chords

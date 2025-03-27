@@ -11,7 +11,7 @@ export default function NavbarFooter() {
     <div className="flex flex-row items-center justify-between w-full">
       <Button
         icon={<FaGithub className="w-6 h-6" />}
-        link="https://www.github.com/ralphmettle/cithara"
+        externalLink="https://www.github.com/ralphmettle/cithara"
       />
       <ModalButton icon={<FaUser className="w-4 h-4" />} label="Account">
         Account Modal
