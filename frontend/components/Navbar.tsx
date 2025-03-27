@@ -17,9 +17,9 @@ export default function Navbar() {
       </Link>
       <div className="flex flex-col h-full gap-3 p-4 w-full my-6 rounded-xl shadow-md bg-cithara-button border border-cithara-border-inner ring-cithara-border-outer ring-1 ">
         <NavButton label="Chords" link="/chords" />
-        <NavButton label="Notes" link="#" />
-        <NavButton label="Favourites" link="#" />
-        <NavButton label="Repository" link="#" />
+        <NavButton label="Notes" link="/notes" />
+        <NavButton label="Favourites" link="/favourites" />
+        <NavButton label="Repository" link="/repository" />
       </div>
       <div className="flex items-end w-full">
         <NavbarFooter />
