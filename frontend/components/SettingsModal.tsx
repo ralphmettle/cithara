@@ -34,7 +34,7 @@ export default function SettingsModal() {
         <ModalButton
           icon={<BiSolidPalette className="w-6 h-6" />}
           label="Themes"
-        />
+        >Themes</ModalButton>
       </div>
     </div>
   );

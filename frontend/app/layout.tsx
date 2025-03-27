@@ -1,10 +1,12 @@
+import "./globals.css";
+
 import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
-import "./globals.css";
+
+import { IoIosArrowBack } from "react-icons/io";
+
 import Navbar from "@/components/Navbar";
 import Button from "@/components/Button";
-import { IoIosArrowBack } from "react-icons/io";
-import ModalButton from "@/components/ModalButton";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -33,7 +35,7 @@ export default function RootLayout({
       >
         <div className="flex flex-row justify-center items-center h-screen w-full py-2">
           <Navbar />
-          <div className="flex grow h-full w-full p-4 mr-2 rounded-2xl bg-cithara-primary border border-cithara-panel-border shadow-2xl">
+          <div className="flex grow h-full w-full p-4 mx-2 rounded-2xl bg-cithara-primary border border-cithara-panel-border shadow-2xl">
             <div className="absolute w-fit h-fit z-10">
               <Button icon={<IoIosArrowBack className="w-4 h-4" />} />
             </div>
