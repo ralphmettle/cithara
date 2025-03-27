@@ -16,3 +16,7 @@
 - [ ] Implement theming functionality
 - [ ] Make design responsive
 - [ ] Properly differentiate DestructiveButton component
+
+## Desktop
+
+- [ ] Integrate Tauri for desktop app
