@@ -10,3 +10,5 @@ Thumbs.db
 # Caches
 .pytest_cache/
 
+# Env
+.venv/
