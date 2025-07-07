@@ -1,5 +1,6 @@
 import pytest
-from cithara.core.note import Note, PitchTransformer
+from cithara.core.interval import Interval
+from cithara.core.note import Note, PitchTransformer, NoteGenerator
 
 def test_note_initialisation():
     note = Note("C#")
@@ -47,3 +48,14 @@ def test_canonise_method():
 def test_name_from_pitch():
     assert PitchTransformer.name_from_pitch(0) == "C#"
     assert PitchTransformer.name_from_pitch(2) == "D#"
+
+def test_generate_from_pitch_class():
+    assert NoteGenerator.from_pitch_class(pitch_class=0, use_flats=False).note_name == Note("C").note_name
+    assert NoteGenerator.from_pitch_class(pitch_class=1, use_flats=True).note_name == Note("Db").note_name
+    assert NoteGenerator.from_pitch_class(pitch_class=3, use_flats=False).note_name == Note("D#").note_name
+
+def test_generate_from_interval():
+    assert NoteGenerator.from_interval(root=Note("C"), interval=Interval(4)).note_name == Note("E").note_name
+    assert NoteGenerator.from_interval(root=Note("C"), interval=Interval(3)).note_name == Note("D#").note_name
+    assert NoteGenerator.from_interval(root=Note("C"), interval=Interval(3), use_flats=True).note_name == Note("Eb").note_name
+
