@@ -28,3 +28,12 @@ class Interval:
     def _get_interval_name(self) -> str:
         if self.semitones in INTERVAL_NAMES:
             return INTERVAL_NAMES.get(self.semitones)
+
+    def __eq__(self, other) -> bool:
+        if not isinstance(other, Interval):
+            return NotImplemented
+        else:
+            return (
+                self.semitones == other.semitones
+                and self.interval_name == other.interval_name
+            )
