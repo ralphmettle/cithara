@@ -27,24 +27,6 @@ class Scale:
             pass
 
 
-class MajorScale(Scale):
-    def __init__(self, root: Note) -> None:
-        super().__init__(root)
-        self.type = "major"
-        self.formula: list[int] = SCALE_FORMULAS.get(self.type)
-        self.notes = ScaleBuilder.build(self.root, self.formula)
-
-
-class HarmonicMinorScale(Scale):
-    def __init__(self, root: Note) -> None:
-        super().__init__(root)
-
-
-class MelodicMinorScale(Scale):
-    def __init__(self, root: Note) -> None:
-        super().__init__(root)
-
-
 class ScaleBuilder:
     @staticmethod
     def build(
