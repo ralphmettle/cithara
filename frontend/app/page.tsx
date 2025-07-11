@@ -19,7 +19,7 @@ export default function Home() {
         </div>
         <div className="w-full flex flex-col gap-4 items-center pt-12 px-10">
           <p className="text-sm text-stone-400">
-            Try a demo! (this isn't working yet lol)
+            Try a demo! (this isn&apos;t working yet lol)
           </p>
           <div className="w-full sm:w-xl flex">
             <ScaleSelector />
