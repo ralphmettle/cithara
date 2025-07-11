@@ -12,7 +12,7 @@ export default function Home() {
       </div>
       <div className="w-full min-h-screen pt-[30vh] flex flex-col items-center pb-40">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-8xl lg:text-[10rem] font-bold">Cithara</h1>
+          <h1 className="text-8xl sm:text-[10rem] font-bold">Cithara</h1>
           <p className="pt-2 text-md text-stone-400">
             A Python library for music theory object creation
           </p>
@@ -21,12 +21,15 @@ export default function Home() {
           <p className="text-sm text-stone-400">
             Try a demo! (this isn't working yet lol)
           </p>
-          <div className="w-full md:w-xl flex">
+          <div className="w-full sm:w-xl flex">
             <ScaleSelector />
           </div>
         </div>
         <div className="flex pt-4 gap-4">
-          <Button className="hover:cursor-not-allowed bg-cithara-ui hover:bg-cithara/75" variant="secondary">
+          <Button
+            className="hover:cursor-not-allowed bg-cithara-ui hover:bg-cithara/75"
+            variant="secondary"
+          >
             Get info
           </Button>
           <Button asChild className="hover:cursor-pointer" variant="outline">
