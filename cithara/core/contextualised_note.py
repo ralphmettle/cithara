@@ -50,3 +50,7 @@ class ChordTone(ContextualisedNote):
 
     def __repr__(self) -> str:
         return f"<ScaleDegree(tone={self.tone}, note='{self.note.note_name}', root='{self.root.note_name}', interval='{self.interval.interval_name}')>"
+
+
+c = ChordTone(Note("C"), Note("C"), 0, Interval(0))
+

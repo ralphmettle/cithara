@@ -3,10 +3,5 @@ from cithara.core.scale.base import Scale, ScaleBuilder, SCALE_FORMULA
 
 
 class HarmonicMinorScale(Scale):
-    def __init__(self, root: Note, use_flats: bool) -> None:
-        super().__init__(root=root)
-        self.type = "harmonic_minor"
-        self.formula = SCALE_FORMULA.get(self.type)
-        self.notes = ScaleBuilder.build(
-            root=self.root, formula=self.formula, use_flats=use_flats
-        )
+    def __init__(self, root: Note, use_flats: bool = True) -> None:
+        super().__init__(root=root, type="harmonic_minor", use_flats=use_flats)

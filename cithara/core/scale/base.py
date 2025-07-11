@@ -13,15 +13,21 @@ SCALE_FORMULA: dict[str, list[int]] = {
 
 
 class Scale(ABC):
-    def __init__(self, root: Note) -> None:
+    def __init__(self, root: Note, type: str, use_flats: bool) -> None:
+        type = type.strip()
+        if type not in SCALE_FORMULA:
+            raise ValueError(f"Invalid scale type: {type}")
+        
         self.root: Note = root
-        self.type: str = ""
-        self.notes: list[ScaleDegree] = []
-        self.formula: list[int] = []
+        self.type: str = type
+        self.formula: list[int] = SCALE_FORMULA.get(self.type, [])
+        self.notes: list[ScaleDegree] = ScaleBuilder.build(
+            root=self.root, formula=self.formula, use_flats=use_flats
+        )
 
         # 0-indexed method of getting a specifc scale degree
         @classmethod
-        def get_degree(self, degree: int):
+        def degree(self, degree: int):
             # How do I want to represent the degree?
             # Should I allow for "extended degrees" i.e. mod(7) operation?
             # Do I expect the user to only pass in a number 1-7?
@@ -31,7 +37,7 @@ class Scale(ABC):
 class ScaleBuilder:
     @staticmethod
     def build(
-        root: Note, formula: list[int], use_flats: bool = False
+        root: Note, formula: list[int], use_flats: bool = True
     ) -> list[ScaleDegree]:
         scale = []
         degree = 0
