@@ -5,7 +5,8 @@
 
 @theme inline {
   --color-cithara: var(--cithara-orange);
-  --color-cithara-ui: var(--cithara-orange-dark);
+  --color-cithara-ui: var(--cithara-orange-ui);
+  --color-cithara-ui-dark: var(--cithara-orange-ui-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -79,7 +80,8 @@
   --sidebar-border: oklch(0.923 0.003 48.717);
   --sidebar-ring: oklch(0.709 0.01 56.259);
   --cithara-orange: oklch(66.519% 0.22463 35.283);
-  --cithara-orange-dark: oklch(58.081% 0.20836 34.084);
+  --cithara-orange-ui: oklch(58.081% 0.20836 34.084);
+  --cithara-orange-ui-dark: oklch(50.403% 0.18753 32.674);
 }
 
 .dark {

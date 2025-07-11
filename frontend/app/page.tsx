@@ -27,7 +27,7 @@ export default function Home() {
         </div>
         <div className="flex pt-4 gap-4">
           <Button
-            className="hover:cursor-not-allowed bg-cithara-ui hover:bg-cithara/75"
+            className="hover:cursor-not-allowed bg-cithara-ui hover:bg-cithara-ui-dark"
             variant="secondary"
           >
             Get info
@@ -43,7 +43,7 @@ export default function Home() {
           </Button>
         </div>
         {/* <div className="w-full h-120 bg-neutral-200 rounded-md shadow-inner mt-6" /> */}
-        <div className="h-120" />
+        {/* <div className="h-120" /> */}
       </div>
       <Footer />
     </>
