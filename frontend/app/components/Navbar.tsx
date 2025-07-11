@@ -11,7 +11,7 @@ export default function Navbar() {
           <PiPianoKeysFill className="text-cithara group-hover:text-cithara-ui transition-colors duration-250 w-8 h-8" />
           <h1 className="text-white">Cithara</h1>
         </div>
-      </Link>s
+      </Link>
       <div className="flex flex-row items-center gap-4 sm:gap-12">
         <NavLink link="" title="Home" />
         <NavLink link="docs" title="Docs" />
