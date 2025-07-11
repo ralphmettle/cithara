@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-cithara: var(--cithara-orange);
+  --color-cithara-ui: var(--cithara-orange-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
@@ -76,6 +78,8 @@
   --sidebar-accent-foreground: oklch(0.216 0.006 56.043);
   --sidebar-border: oklch(0.923 0.003 48.717);
   --sidebar-ring: oklch(0.709 0.01 56.259);
+  --cithara-orange: oklch(66.519% 0.22463 35.283);
+  --cithara-orange-dark: oklch(58.081% 0.20836 34.084);
 }
 
 .dark {
@@ -119,4 +123,8 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+body {
+  font-family: var(--font-funnel-sans), var(--font-funnel-display);
 }

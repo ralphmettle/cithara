@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="flex flex-row w-full lg:w-6xl items-center justify-between mx-4 px-8 py-4 border rounded-lg bg-background/50 backdrop-blur-lg">
       <Link href="/">
         <div className="flex items-center justify-center gap-1 font-bold text-xl">
-          <PiPianoKeysFill className="text-orange-600 w-8 h-8" />
+          <PiPianoKeysFill className="text-cithara w-8 h-8" />
           <h1>Cithara</h1>
         </div>
       </Link>

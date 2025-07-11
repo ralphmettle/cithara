@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Navbar from "@/app/components/Navbar";
 import ScaleSelector from "@/app/components/ScaleSelector";
 import { Button } from "@/components/ui/button";
@@ -14,7 +13,7 @@ export default function Home() {
       <div className="w-full min-h-screen pt-[30vh] flex flex-col items-center pb-40">
         <div className="flex flex-col items-center text-center">
           <h1 className="text-8xl lg:text-[10rem] font-bold">Cithara</h1>
-          <p className="pt-4 text-sm text-stone-400">
+          <p className="pt-2 text-md text-stone-400">
             A Python library for music theory object creation
           </p>
         </div>
@@ -27,7 +26,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex pt-4 gap-4">
-          <Button className="hover:cursor-not-allowed" variant="secondary">
+          <Button className="hover:cursor-not-allowed bg-cithara-ui hover:bg-cithara/75" variant="secondary">
             Get info
           </Button>
           <Button asChild className="hover:cursor-pointer" variant="outline">
