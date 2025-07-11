@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Funnel_Display, Funnel_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/utils/theme-provider";
+import Navbar from "./components/Navbar";
 
 const funnelDisplay = Funnel_Display({
   variable: "--font-funnel-display",
@@ -12,7 +13,6 @@ const funnelSans = Funnel_Sans({
   variable: "--font-funnel-sans",
   subsets: ["latin"],
 });
-
 
 export const metadata: Metadata = {
   title: "Cithara",
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html className="" lang="en" suppressHydrationWarning>
       <head />
       <body
         className={`${funnelSans.variable} ${funnelDisplay.variable} antialiased`}
@@ -36,6 +36,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <div className="flex fixed w-full pt-6 items-center justify-center">
+            <Navbar />
+          </div>
           {children}
         </ThemeProvider>
       </body>
