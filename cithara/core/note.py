@@ -64,7 +64,7 @@ class Note:
                 enharmonics.append(new_note)
         return enharmonics
 
-    def _canonise(self, use_flats: bool = False) -> str:
+    def _canonise(self, use_flats: bool = True) -> str:
         return note_name_from_pitch_class(self.pitch_class, use_flats)
 
     def __eq__(self, other: "Note") -> bool:
@@ -97,17 +97,17 @@ class PitchTransformer:
 
 class NoteGenerator:
     @staticmethod
-    def from_pitch_class(pitch_class: int, use_flats: bool = False) -> Note:
+    def from_pitch_class(pitch_class: int, use_flats: bool = True) -> Note:
         return Note(note_name_from_pitch_class(pitch_class, use_flats))
 
     @staticmethod
-    def from_interval(root: Note, interval: Interval, use_flats: bool = False) -> Note:
+    def from_interval(root: Note, interval: Interval, use_flats: bool = True) -> Note:
         target_pitch = (root.pitch_class + interval.semitones) % 12
         return NoteGenerator.from_pitch_class(target_pitch, use_flats)
 
 
 # Likely needs a lot of work
-def note_name_from_pitch_class(pitch_class: int, use_flats: bool = False):
+def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True):
     if pitch_class in PITCH_TO_NATURAL:
         return PITCH_TO_NATURAL[pitch_class]
 

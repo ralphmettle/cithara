@@ -2,7 +2,7 @@ import pytest
 from cithara.core.interval import Interval
 from cithara.core.note import Note
 from cithara.core.scale.major_scale import MajorScale
-from cithara.core.scale.scale_degree import ScaleDegree
+from cithara.core.contextualised_note import ScaleDegree
 
 
 def test_initialise_major_scale():
