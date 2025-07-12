@@ -9,7 +9,7 @@ export default function NavLink({
 }) {
   return (
     <Link href={`/${link}`}>
-      <div className="text-stone-500 hover:text-stone-50 hover:cursor-pointer transition-all duration-250 select-none">
+      <div className="text-stone-700 dark:text-stone-500 hover:text-foreground hover:cursor-pointer transition-all duration-250 select-none">
         <p>{title}</p>
       </div>
     </Link>

@@ -4,9 +4,11 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --color-page-background: var(--page-background);
   --color-page-gradient: var(--page-gradient);
   --color-cithara: var(--cithara-orange);
   --color-cithara-ui: var(--cithara-orange-ui);
+  --color-cithara-ui-active: var(--cithara-orange-ui-active);
   --color-cithara-ui-dark: var(--cithara-orange-ui-dark);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -81,9 +83,12 @@
   --sidebar-border: oklch(0.923 0.003 48.717);
   --sidebar-ring: oklch(0.709 0.01 56.259);
   --cithara-orange: oklch(66.519% 0.22463 35.283);
-  --cithara-orange-ui: oklch(58.081% 0.20836 34.084);
-  --cithara-orange-ui-dark: oklch(50.403% 0.18753 32.674);
-  --page-gradient: oklch(93.705% 0.00011 271.152);
+  --cithara-orange-ui: oklch(58.258% 0.20927 34.033);
+  --cithara-orange-ui-dark: oklch(59.586% 0.2245 32.204);
+  --cithara-orange-ui-active: oklch(59.586% 0.2245 32.204);
+  --page-gradient: oklch(0.97 0.001 106.424);
+  --page-background: oklch(1 0 0);
+
 }
 
 .dark {
@@ -118,7 +123,12 @@
   --sidebar-accent-foreground: oklch(0.985 0.001 106.423);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.553 0.013 58.071);
+  --cithara-orange: oklch(66.519% 0.22463 35.283);
+  --cithara-orange-ui: oklch(58.081% 0.20836 34.084);
+  --cithara-orange-ui-dark: oklch(47.167% 0.17468 32.849);
+  --cithara-orange-ui-active: oklch(70.229% 0.19115 34.161);
   --page-gradient: oklch(19.519% 0.0118 27.563);
+  --page-background: oklch(0.147 0.004 49.25);
 }
 
 @layer base {

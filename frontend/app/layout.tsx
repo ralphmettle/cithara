@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="" lang="en" suppressHydrationWarning>
+    <html className="bg-radial-[at_50%_100%] from-page-gradient to-background bg-bottom" lang="en" suppressHydrationWarning>
       <head />
       <body
         className={`${funnelSans.variable} ${funnelDisplay.variable} antialiased`}

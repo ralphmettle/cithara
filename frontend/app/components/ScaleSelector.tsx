@@ -78,7 +78,7 @@ export default function MusicSelector() {
 
   return (
     <div className="w-full mx-auto">
-      <div className="flex border rounded-md overflow-hidden">
+      <div className="bg-background/75 backdrop-blur-md  flex border rounded-md overflow-hidden">
         {/* Note Selection */}
         <Select value={selectedNote} onValueChange={handleNoteChange}>
           <SelectTrigger className="flex border-0 border-r rounded-none hover:bg-muted/50 active:bg-muted/70 transition-colors duration-150">
