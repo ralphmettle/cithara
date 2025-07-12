@@ -6,7 +6,7 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Navbar() {
   return (
-    <nav className="flex flex-row w-full lg:w-6xl items-center justify-between mx-4 pl-4 pr-4 sm:px-8 py-4 border rounded-lg bg-background/25 backdrop-blur-lg">
+    <nav className="flex flex-row w-full lg:w-6xl items-center justify-between mx-4 px-4 py-3 pr-5 sm:px-8 sm:py-4 border rounded-lg bg-background/25 backdrop-blur-lg">
       <Link href="/">
         <div className="flex items-center justify-center gap-1 font-bold text-xl group hover:shadow-cithara hover:drop-shadow-cithara transition-all duration-200">
           <PiPianoKeysFill className="text-cithara group-hover:text-cithara-ui-active transition-colors duration-250 w-8 h-8" />
