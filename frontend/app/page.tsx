@@ -24,7 +24,7 @@ export default function Home() {
         <div className="flex pt-6 gap-4">
           <Button
             // className="hover:cursor-pointer bg-cithara-ui hover:bg-cithara-ui-dark"
-            className="hover:cursor-not-allowed text-white bg-cithara-ui hover:bg-stone-500 transition-all duration-250"
+            className="bg-stone-500 hover:bg-stone-500 hover:cursor-not-allowed text-white sm:bg-cithara-ui sm:hover:bg-stone-500 transition-all duration-250"
             variant="secondary"
           >
             Get info
