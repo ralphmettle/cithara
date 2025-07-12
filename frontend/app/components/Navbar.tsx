@@ -25,7 +25,7 @@ export default function Navbar() {
             <FaGithub className="h-6 w-6" />
           </div>
         </a>
-        <div className="flex -ml-2">
+        <div className="sm:flex sm:-ml-2 hidden">
           <ModeToggle />
         </div>
       </div>
