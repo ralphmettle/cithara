@@ -101,7 +101,7 @@ export default function MusicSelector() {
         console.error("Failed to fetch scale:", err);
         setScaleResult([]);
       });
-  }, [selectedNote, selectedAccidental, selectedScale]);
+  }, [selectedNote, selectedAccidental, selectedScale, selectedNoteData?.sharp, selectedNoteData?.use_flats]);
 
   return (
     <div className="w-full mx-auto">
@@ -152,18 +152,30 @@ export default function MusicSelector() {
         </Select>
       </div>
 
-      <div className="flex bg-neutral-200/65 dark:bg-muted/20 p-6 rounded-md min-h-[100px] border border-border items-center justify-center mt-4">
+      <div className="flex bg-neutral-200/65 dark:bg-muted/20 p-6 rounded-md min-h-[100px] border border-border items-center justify-center mt-">
         {scaleResult.length > 0 ? (
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-foreground ">
-              {selectedNote} {selectedScale.charAt(0).toUpperCase() + selectedScale.slice(1)} Scale
+              {selectedNote}{" "}
+              {selectedScale.charAt(0).toUpperCase() + selectedScale.slice(1)}{" "}
+              Scale
             </h2>
             <div className="flex flex-wrap justify-center gap-4 items-end">
               {scaleResult.map((note, index) => {
-                const romanNumerals = ["I", "II", "III", "IV", "V", "VI", "VII"];
+                const romanNumerals = [
+                  "I",
+                  "II",
+                  "III",
+                  "IV",
+                  "V",
+                  "VI",
+                  "VII",
+                ];
                 return (
                   <div key={index} className="flex flex-col items-center">
-                    <span className="text-xs text-stone-400">{romanNumerals[index] || ""}</span>
+                    <span className="text-xs text-stone-400">
+                      {romanNumerals[index] || ""}
+                    </span>
                     <span className="px-3 py-2 bg-background dark:bg-background/30 text-primary font-medium rounded-md text-base border border-border hover:shadow-lg hover:brightness-150 transition-all select-none cursor-default">
                       {note}
                     </span>

@@ -5,7 +5,7 @@ export default function DocsPage() {
     <div className="w-full min-h-screen flex flex-col pt-[8vh] items-center justify-center bg-radial-[at_50%_100%] from-page-gradient to-page-background bg-bottom gap-4">
       <h1 className="text-5xl font-bold"> This page is under construction!</h1>
       <p className="text-muted-foreground">
-        Please look forward to Cithara's release for documentation
+        Please look forward to Cithara&apos;s release for documentation
       </p>
       <Image
         className="mt-8"
