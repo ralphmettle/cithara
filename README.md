@@ -1,10 +1,13 @@
-![Live Site](https://img.shields.io/badge/site-live-green?style=for-the-badge&logo=vercel)
-![Built with Next.js](https://img.shields.io/badge/frontend-Next.js-black?style=for-the-badge&logo=next.js)
-![Built with Django](https://img.shields.io/badge/backend-Django-092E20?style=for-the-badge&logo=django)
-![Python version](https://img.shields.io/badge/python-3.12+-blue?style=for-the-badge&logo=python)
-![CI Status](https://img.shields.io/github/actions/workflow/status/ralphmettle/Cithara/ci.yaml?style=for-the-badge&label=CI&logo=github)
-![Last Commit](https://img.shields.io/github/last-commit/ralphmettle/Cithara?style=for-the-badge)
-![License](https://img.shields.io/github/license/ralphmettle/Cithara?style=for-the-badge)
+<p align="center">
+  <img alt="Live Site" src="https://img.shields.io/badge/site-live-green?style=for-the-badge&logo=vercel">
+  <img alt="CI Status" src="https://img.shields.io/github/actions/workflow/status/ralphmettle/Cithara/ci.yaml?style=for-the-badge&label=CI&logo=github">
+  <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ralphmettle/Cithara?style=for-the-badge">
+  <img alt="Built with Next.js" src="https://img.shields.io/badge/frontend-Next.js-black?style=for-the-badge&logo=next.js">
+  <img alt="Built with Django" src="https://img.shields.io/badge/backend-Django-092E20?style=for-the-badge&logo=django">
+  <img alt="Python version" src="https://img.shields.io/badge/python-3.12+-blue?style=for-the-badge&logo=python">
+  <img alt="TypeScript version" src="https://img.shields.io/badge/typescript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
+  <img alt="License" src="https://img.shields.io/github/license/ralphmettle/Cithara?style=for-the-badge">
+</p>
 
 # Cithara Project
 
