@@ -6,16 +6,16 @@ import { FaGithub } from "react-icons/fa";
 export default function Home() {
   return (
     <>
-      <div className="w-full min-h-screen pt-[30vh] flex flex-col items-center pb-40 bg-radial-[at_50%_100%] from-page-gradient to-page-background bg-bottom">
+      <div className="w-full min-h-screen pt-[25vh] flex flex-col items-center pb-40 bg-radial-[at_50%_100%] from-page-gradient to-page-background bg-bottom">
         <div className="flex flex-col items-center text-center">
-          <h1 className="text-cithara-ui-dark dark:text-foreground text-8xl sm:text-[10rem] font-bold">Cithara</h1>
-          <p className="pt-2 text-md text-stone-400">
+          <h1 className="text-cithara-ui-dark dark:text-foreground text-8xl sm:text-[10rem] font-bold select-none cursor-default">Cithara</h1>
+          <p className="pt-2 text-md text-stone-400 select-none cursor-default">
             A Python library for music theory object creation
           </p>
         </div>
         <div className="w-full flex flex-col gap-6 items-center pt-16 px-10">
           <p className="text-sm text-stone-400">
-            Try a demo! (this isn&apos;t working yet lol)
+            Try the demo!
           </p>
           <div className="w-full sm:w-xl flex">
             <ScaleSelector />

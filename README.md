@@ -1,22 +1,130 @@
-# To-Do
+# Cithara Project
 
-## Backend
+Cithara is a comprehensive music theory toolkit and exploration platform designed to help users understand and interact with musical concepts such as notes, intervals, scales, and chords. The project combines a Python core library, a Django REST API backend, and a React/Next.js frontend to provide an interactive and educational experience.
 
-- [ ] Fix enharmonic equivalent naming bugs
-- [ ] Set up API endpoints for getting note objects/data
+## Table of Contents
 
-## Frontend
+- [Cithara Project](#cithara-project)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+  - [Project Structure](#project-structure)
+  - [Core Features](#core-features)
+  - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Backend Setup](#backend-setup)
+    - [Frontend Setup](#frontend-setup)
+  - [Usage](#usage)
+  - [Development](#development)
+  - [Technologies Used](#technologies-used)
+  - [Contributing](#contributing)
+  - [Roadmap / To Be Completed](#roadmap--to-be-completed)
+  - [License](#license)
 
-- [x] Refactor button component for external links to open in new tab
-- [ ] Create settings modal content
-- [ ] Create components for notes
-- [ ] Create components for chords
-- [ ] Facilitate API calls to backend for note/chord objects
-- [ ] Figure out storage/caching strategy for note objects to reduce API calls
-- [ ] Implement theming functionality
-- [ ] Make design responsive
-- [ ] Properly differentiate DestructiveButton component
+## Overview
 
-## Desktop
+The Cithara Project consists of three main parts:
 
-- [ ] Integrate Tauri for desktop app
+- **Core Library (`cithara/core`)**: A Python library implementing music theory logic — notes, intervals, scales, chords, and related utilities. This is designed to be robust, type-annotated, and modular for easy reuse.
+  
+- **Backend API (`backend`)**: A Django REST Framework-based API that exposes the core library functionalities through HTTP endpoints. This enables external clients, such as the frontend, to query and interact with musical data.
+  
+- **Frontend Application (`frontend`)**: A React/Next.js web application that provides a user-friendly, mobile-first interface for exploring musical scales, chords, and theory relationships, powered by the backend API.
+
+## Project Structure
+
+```txt
+cithara-project/
+├── cithara/              # Core Python music theory library
+│   ├── core/
+│   ├── utils/
+│   └── init.py
+├── backend/              # Django backend and REST API
+│   ├── apps/
+│   ├── config/
+│   └── manage.py
+├── frontend/             # Next.js React frontend
+│   ├── app/
+│   ├── components/
+│   └── public/
+├── README.md
+├── requirements.txt
+└── package.json
+```
+
+## Core Features
+
+- **Note and Interval Representation**: Precise handling of musical notes, accidentals, pitch classes, and intervals.
+- **Scale and Chord Generation**: Ability to create major, minor, diminished, augmented scales and chords.
+- **Diatonic and Chromatic Relationships**: Supports exploring relationships between notes and chords within scales.
+- **API Access**: Exposes music theory computations as RESTful endpoints.
+- **Interactive Frontend**: Allows users to select notes, accidentals, and scales/chords to explore their structure dynamically.
+
+## Getting Started
+
+### Prerequisites
+
+- Python 3.12+
+- Node.js (for frontend)
+- pnpm or npm/yarn package manager
+
+### Backend Setup
+
+```bash
+cd .
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
+python manage.py runserver
+```
+
+### Frontend Setup
+
+```bash
+cd frontend
+pnpm install
+pnpm dev
+```
+
+## Usage
+
+- Visit the frontend at <http://localhost:3000> (or your deployed URL).
+- Use the interface to select root notes, accidentals, and scale types.
+- Submit selections to fetch scale data dynamically from the backend.
+- Explore generated scales and chords with interactive visual components.
+
+## Development
+
+- Follow test-driven development practices; tests live primarily in the backend tests/ directory.
+- Backend API is built with Django REST Framework.
+- Frontend uses React with Next.js and Tailwind CSS for styling.
+- Core library is standalone Python code designed for reuse or extension.
+- Use GitHub Actions for CI/CD including linting and type checks.
+
+## Technologies Used
+
+- Python 3.12, Django, Django REST Framework
+- TypeScript, React, Next.js, Tailwind CSS
+- Docker (planned)
+- GitHub Actions for CI/CD
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and submit pull requests with clear descriptions and tests where applicable :3
+
+## Roadmap / To Be Completed
+
+- *Core Library:* Add more scale and chord types, refine enharmonic logic, improve documentation.
+- *Backend API:* Expand endpoint coverage, add authentication and rate limiting, implement caching.
+- *Frontend:* Build comprehensive UI with more interactive components, better error handling, mobile optimisation, and user onboarding.
+- *Deployment:* Setup CI/CD pipelines for automatic deployment to Vercel (frontend) and a suitable backend hosting service.
+- *CLI Tool: (Planned)* Add a command-line interface for advanced users to interact with the library directly.
+- *Documentation Site:* Develop detailed user and developer documentation, tutorials, and example projects.
+
+## License
+
+This project is licensed under the **GNU General Public License v3.0 (GNU GPLv3)**.
+
+---
+
+***Created and maintained by Ralph Mettle***

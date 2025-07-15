@@ -1,7 +1,7 @@
-from django.urls import include, path
-from .views import CheckEnharmonicView
+from django.urls import path
+from .views import ScaleView
 
 
 urlpatterns = [
-    path("check_enharmonic/", CheckEnharmonicView.as_view(), name="check_enharmonic"),
+    path("get_scale/", ScaleView.as_view(), name="get_scale"),
 ]

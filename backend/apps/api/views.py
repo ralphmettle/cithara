@@ -1,28 +1,29 @@
-from rest_framework import views, status
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
-from utils.notes import Note
+from rest_framework.views import APIView
+from cithara.core.scale.major_scale import MajorScale
+from cithara.core.note import Note
 
-
-class CheckEnharmonicView(views.APIView):
-    """Check if two notes are enharmonic"""
-
+class ScaleView(APIView):
     permission_classes = [AllowAny]
+    def get(self, request):
+        note = request.query_params.get("note", "C")
+        accidental = request.query_params.get("accidental")
+        scale_type = request.query_params.get("type", "major")
+        use_flats_str = request.query_params.get("use_flats")
+        use_flats = True
 
-    def post(self, request, *args, **kwargs):
-        note1_string = request.data.get("note1")
-        note2_string = request.data.get("note2")
 
-        if not note1_string or not note2_string:
-            return Response({"error": "Both 'note1' and 'note2' must be provided."})
+        if use_flats_str and use_flats_str == "false":
+            use_flats = False
 
-        try:
-            note1 = Note(note1_string)
-            note2 = Note(note2_string)
-        except ValueError as e:
-            return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
+        if accidental:
+            pass
 
-        if note1.is_enharmonic(note2):
-            return Response({"is_enharmonic": True})
+        if scale_type == "major":
+            scale = MajorScale(root=Note(note), use_flats=use_flats)
+            data = [degree.note.note_name for degree in scale.notes]
         else:
-            return Response({"is_enharmonic": False})
+            return Response({"error": "Unsupported scale type"}, status=400)
+        
+        return Response({"scale": data})
