@@ -1,4 +1,4 @@
-# Cithara Project
+# Cithara
 
 <p align="center">
   <img alt="Live Site" src="https://img.shields.io/badge/site-live-green?style=for-the-badge&logo=vercel">
@@ -18,7 +18,7 @@ Cithara is a comprehensive music theory toolkit and exploration platform designe
 
 ## Table of Contents
 
-- [Cithara Project](#cithara-project)
+- [Cithara](#cithara)
   - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
   - [Project Structure](#project-structure)
