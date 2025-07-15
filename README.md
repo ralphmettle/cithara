@@ -1,3 +1,5 @@
+# Cithara Project
+
 <p align="center">
   <img alt="Live Site" src="https://img.shields.io/badge/site-live-green?style=for-the-badge&logo=vercel">
   <img alt="CI Status" src="https://img.shields.io/github/actions/workflow/status/ralphmettle/Cithara/ci.yaml?style=for-the-badge&label=CI&logo=github">
@@ -8,8 +10,6 @@
   <img alt="TypeScript version" src="https://img.shields.io/badge/typescript-5.8.3-3178C6?style=for-the-badge&logo=typescript&logoColor=white">
   <img alt="License" src="https://img.shields.io/github/license/ralphmettle/Cithara?style=for-the-badge">
 </p>
-
-# Cithara Project
 
 Cithara is a comprehensive music theory toolkit and exploration platform designed to help users understand and interact with musical concepts such as notes, intervals, scales, and chords. The project combines a Python core library, a Django REST API backend, and a React/Next.js frontend to provide an interactive and educational experience.
 
