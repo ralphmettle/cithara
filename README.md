@@ -51,13 +51,12 @@ The Cithara Project consists of three main parts:
 cithara-project/
 ├── cithara/              # Core Python music theory library
 │   ├── core/
-│   ├── utils/
-│   └── init.py
-├── backend/              # Django backend and REST API
+│   └── utils/
+├── backend/              # Django REST API backend
 │   ├── apps/
 │   ├── config/
 │   └── manage.py
-├── frontend/             # Next.js React frontend
+├── frontend/             # Next.js frontend
 │   ├── app/
 │   ├── components/
 │   └── public/
