@@ -2,6 +2,8 @@
 
 Cithara is a comprehensive music theory toolkit and exploration platform designed to help users understand and interact with musical concepts such as notes, intervals, scales, and chords. The project combines a Python core library, a Django REST API backend, and a React/Next.js frontend to provide an interactive and educational experience.
 
+---
+
 ## Table of Contents
 
 - [Cithara Project](#cithara-project)
@@ -20,6 +22,8 @@ Cithara is a comprehensive music theory toolkit and exploration platform designe
   - [Roadmap / To Be Completed](#roadmap--to-be-completed)
   - [License](#license)
 
+---
+
 ## Overview
 
 The Cithara Project consists of three main parts:
@@ -29,6 +33,8 @@ The Cithara Project consists of three main parts:
 - **Backend API (`backend`)**: A Django REST Framework-based API that exposes the core library functionalities through HTTP endpoints. This enables external clients, such as the frontend, to query and interact with musical data.
   
 - **Frontend Application (`frontend`)**: A React/Next.js web application that provides a user-friendly, mobile-first interface for exploring musical scales, chords, and theory relationships, powered by the backend API.
+
+---
 
 ## Project Structure
 
@@ -51,13 +57,17 @@ cithara-project/
 └── package.json
 ```
 
+---
+
 ## Core Features
 
 - **Note and Interval Representation**: Precise handling of musical notes, accidentals, pitch classes, and intervals.
 - **Scale and Chord Generation**: Ability to create major, minor, diminished, augmented scales and chords.
 - **Diatonic and Chromatic Relationships**: Supports exploring relationships between notes and chords within scales.
 - **API Access**: Exposes music theory computations as RESTful endpoints.
-- **Interactive Frontend**: Allows users to select notes, accidentals, and scales/chords to explore their structure dynamically.
+- **Interactive Demo**: Allows users to select notes, accidentals, and scales/chords to explore their structure dynamically.
+
+---
 
 ## Getting Started
 
@@ -86,12 +96,16 @@ pnpm install
 pnpm dev
 ```
 
+---
+
 ## Usage
 
 - Visit the frontend at <http://localhost:3000> (or your deployed URL).
 - Use the interface to select root notes, accidentals, and scale types.
 - Submit selections to fetch scale data dynamically from the backend.
 - Explore generated scales and chords with interactive visual components.
+
+---
 
 ## Development
 
@@ -101,6 +115,8 @@ pnpm dev
 - Core library is standalone Python code designed for reuse or extension.
 - Use GitHub Actions for CI/CD including linting and type checks.
 
+---
+
 ## Technologies Used
 
 - Python 3.12, Django, Django REST Framework
@@ -108,18 +124,24 @@ pnpm dev
 - Docker (planned)
 - GitHub Actions for CI/CD
 
+---
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit pull requests with clear descriptions and tests where applicable :3
 
-## Roadmap / To Be Completed
+---
 
-- *Core Library:* Add more scale and chord types, refine enharmonic logic, improve documentation.
-- *Backend API:* Expand endpoint coverage, add authentication and rate limiting, implement caching.
-- *Frontend:* Build comprehensive UI with more interactive components, better error handling, mobile optimisation, and user onboarding.
-- *Deployment:* Setup CI/CD pipelines for automatic deployment to Vercel (frontend) and a suitable backend hosting service.
-- *CLI Tool: (Planned)* Add a command-line interface for advanced users to interact with the library directly.
+## Roadmap / To Be Completed
+  
+- *Core Library:* Add more scale and chord types, refine enharmonic logic, improve documentation, MIDI support.
+- *Backend API:* Expand endpoint coverage and feature set, add authentication and rate limiting, implement caching.
+- *Frontend:* Build comprehensive UI with more interactive components, better error handling and display, mobile optimisation, and potential user onboarding for full online Cithara app.
+- *Deployment:* Set up CI/CD for backend and make backend deployment for site interactivity.
+- *CLI Tool: (Planned)* Add a command-line interface for users to interact with the library directly.
 - *Documentation Site:* Develop detailed user and developer documentation, tutorials, and example projects.
+
+---
 
 ## License
 
