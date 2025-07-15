@@ -152,7 +152,7 @@ export default function MusicSelector() {
         </Select>
       </div>
 
-      <div className="flex bg-neutral-200/65 dark:bg-muted/20 p-6 rounded-md min-h-[100px] border border-border items-center justify-center mt-">
+      <div className="flex bg-neutral-200/65 dark:bg-muted/20 p-6 rounded-md min-h-[100px] border border-border items-center justify-center mt-4">
         {scaleResult.length > 0 ? (
           <div className="space-y-4">
             <h2 className="text-2xl sm:text-3xl font-bold text-center text-foreground ">
