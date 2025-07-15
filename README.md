@@ -1,6 +1,31 @@
+<p align="center">
+  <a href="https://cithara.xyz">
+    <img alt="Live Site" src="https://img.shields.io/badge/site-live-green?style=for-the-badge&logo=vercel">
+  </a>
+  <a href="https://nextjs.org/">
+    <img alt="Built with Next.js" src="https://img.shields.io/badge/frontend-Next.js-black?style=for-the-badge&logo=next.js">
+  </a>
+  <a href="https://www.djangoproject.com/">
+    <img alt="Built with Django" src="https://img.shields.io/badge/backend-Django-092E20?style=for-the-badge&logo=django">
+  </a>
+  <a href="https://www.python.org/downloads/release/python-3120/">
+    <img alt="Python version" src="https://img.shields.io/badge/python-3.12+-blue?style=for-the-badge&logo=python">
+  </a>
+  <a href="https://github.com/ralphmettle/Cithara/actions">
+    <img alt="CI Status" src="https://img.shields.io/github/actions/workflow/status/ralphmettle/Cithara/ci.yaml?style=for-the-badge&label=CI&logo=github">
+  </a>
+  <a href="https://img.shields.io/github/last-commit/ralphmettle/Cithara">
+    <img alt="Last Commit" src="https://img.shields.io/github/last-commit/ralphmettle/Cithara?style=for-the-badge">
+  </a>
+  <a href="https://github.com/ralphmettle/Cithara/blob/main/LICENSE">
+    <img alt="License" src="https://img.shields.io/github/license/ralphmettle/Cithara?style=for-the-badge">
+  </a>
+</p>
+
 # Cithara Project
 
 Cithara is a comprehensive music theory toolkit and exploration platform designed to help users understand and interact with musical concepts such as notes, intervals, scales, and chords. The project combines a Python core library, a Django REST API backend, and a React/Next.js frontend to provide an interactive and educational experience.
+
 
 ---
 
