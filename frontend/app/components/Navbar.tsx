@@ -21,7 +21,7 @@ export default function Navbar() {
           rel="noopener noreferrer"
           href="https://github.com/ralphmettle/cithara"
         >
-          <div className="flex flex-row items-center justify-center text-stone-700 dark:text-stone-500 hover:text-foreground hover:cursor-pointer transition-all duration-250 select-none">
+          <div className="flex flex-row items-center justify-center text-stone-700 dark:text-stone-500 hover:text-foreground dark:hover:text-stone-200 hover:cursor-pointer transition-all duration-250 select-none">
             <FaGithub className="h-6 w-6" />
           </div>
         </a>
