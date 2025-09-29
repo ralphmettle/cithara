@@ -145,8 +145,8 @@ Contributions are welcome! Please fork the repository and submit pull requests w
 
 ## Roadmap / To Be Completed
   
-- *Core Library:* Add more scale and chord types, refine enharmonic logic, improve documentation, MIDI support.
-- *Backend API:* Expand endpoint coverage and feature set, add authentication and rate limiting, implement caching.
+- *Core Library:* Add more scale and chord types, refine enharmonic logic, improve documentation (documentation webpage, library docstrings), MIDI support.
+- *Backend API:* Build a web API for data retrieval.
 - *Frontend:* Build comprehensive UI with more interactive components, better error handling and display, mobile optimisation, and potential user onboarding for full online Cithara app.
 - *Deployment:* Set up CI/CD for backend and make backend deployment for site interactivity.
 - *CLI Tool: (Planned)* Add a command-line interface for users to interact with the library directly.
