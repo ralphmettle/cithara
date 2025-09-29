@@ -128,14 +128,13 @@ def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True) -> str:
         if target in PITCH_TO_NATURAL:
             return PITCH_TO_NATURAL[target] + "#"
 
-    # If for some reason it fails to enter the conditionals (?)
+    # If for some reason it fails to enter the conditionals
     raise ValueError(f"Invalid input: {pitch_class}")
 
-def note_name_from_natural(pitch_class: int, natural: str) -> str: # need a better function name
+def note_name_from_natural(pitch_class: int, natural: str) -> str:
     diff = (pitch_class - NATURAL_PITCHES[natural]) % 12
     if diff <= 6:
         return natural + "#" * diff if diff > 0 else natural
     else:
-        # closer going down
         steps_down = 12 - diff
         return natural + "b" * steps_down
