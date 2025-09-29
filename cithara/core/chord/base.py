@@ -72,4 +72,3 @@ class ChordBuilder:
                 )
         
         return chord
-

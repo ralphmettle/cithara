@@ -101,13 +101,21 @@ class NoteGenerator:
         return Note(note_name_from_pitch_class(pitch_class, use_flats))
 
     @staticmethod
-    def from_interval(root: Note, interval: Interval, use_flats: bool = True) -> Note:
+    def from_interval(root: Note, interval: Interval, natural: str = "", use_flats: bool = True) -> Note:
         target_pitch = (root.pitch_class + interval.semitones) % 12
-        return NoteGenerator.from_pitch_class(target_pitch, use_flats)
+        if not natural:
+            return NoteGenerator.from_pitch_class(target_pitch, use_flats)
+        else:
+            return NoteGenerator.from_natural(target_pitch, natural)
+    
+    @staticmethod
+    def from_natural(pitch_class: int, natural: str) -> Note:
+        return Note(note_name_from_natural(pitch_class, natural))
 
 
 # Likely needs a lot of work
-def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True):
+def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True) -> str:
+    pitch_class = pitch_class % 12
     if pitch_class in PITCH_TO_NATURAL:
         return PITCH_TO_NATURAL[pitch_class]
 
@@ -122,3 +130,12 @@ def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True):
 
     # If for some reason it fails to enter the conditionals (?)
     raise ValueError(f"Invalid input: {pitch_class}")
+
+def note_name_from_natural(pitch_class: int, natural: str) -> str: # need a better function name
+    diff = (pitch_class - NATURAL_PITCHES[natural]) % 12
+    if diff <= 6:
+        return natural + "#" * diff if diff > 0 else natural
+    else:
+        # closer going down
+        steps_down = 12 - diff
+        return natural + "b" * steps_down

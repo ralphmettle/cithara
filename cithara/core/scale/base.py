@@ -13,17 +13,18 @@ SCALE_FORMULA: dict[str, list[int]] = {
 
 
 class Scale(ABC):
-    def __init__(self, root: Note, type: str, use_flats: bool) -> None:
+    def __init__(self, root: Note, type: str) -> None:
         type = type.strip()
         if type not in SCALE_FORMULA:
             raise ValueError(f"Invalid scale type: {type}")
-        
+
         self.root: Note = root
         self.type: str = type
         self.formula: list[int] = SCALE_FORMULA.get(self.type, [])
         self.notes: list[ScaleDegree] = ScaleBuilder.build(
-            root=self.root, formula=self.formula, use_flats=use_flats
+            root=self.root, formula=self.formula
         )
+        
 
         # 0-indexed method of getting a specifc scale degree
         @classmethod
@@ -33,34 +34,63 @@ class Scale(ABC):
             # Do I expect the user to only pass in a number 1-7?
             pass
 
+    @property
+    def note_names(self) -> list[str]:
+        """Return the scale’s notes as a list of strings."""
+        return [deg.note.note_name for deg in self.notes]
 
+
+# class ScaleBuilder:
+#     @staticmethod
+#     def build(
+#         root: Note, formula: list[int], use_flats: bool = True
+#     ) -> list[ScaleDegree]:
+#         scale = []
+#         degree = 0
+#         for interval in formula:
+#             if interval == 0:
+#                 scale.append(
+#                     ScaleDegree(
+#                         note=root, root=root, degree=degree, interval=Interval(interval)
+#                     )
+#                 )
+#             else:
+#                 scale.append(
+#                     ScaleDegree(
+#                         note=NoteGenerator.from_interval(
+#                             root=root,
+#                             interval=Interval(interval),
+#                             use_flats=use_flats,
+#                         ),
+#                         root=root,
+#                         degree=degree,
+#                         interval=Interval(interval),
+#                     )
+#                 )
+#             degree += 1
+
+#         return scale
+
+
+# redo scale builder method to name appropriately
 class ScaleBuilder:
     @staticmethod
-    def build(
-        root: Note, formula: list[int], use_flats: bool = True
-    ) -> list[ScaleDegree]:
+    def build(root: Note, formula: list[int]) -> list[ScaleDegree]:
+        note_ref = ["C", "D", "E", "F", "G", "A", "B"]
+        ctr = 0
+        start = note_ref.index(root.natural)
+
         scale = []
-        degree = 0
         for interval in formula:
-            if interval == 0:
-                scale.append(
-                    ScaleDegree(
-                        note=root, root=root, degree=degree, interval=Interval(interval)
-                    )
+            letter = note_ref[(start + ctr) % 7]
+            note = NoteGenerator.from_interval(
+                root=root, interval=Interval(interval), natural=letter
+            )
+            scale.append(
+                ScaleDegree(
+                    note=note, root=root, degree=ctr, interval=Interval(interval)
                 )
-            else:
-                scale.append(
-                    ScaleDegree(
-                        note=NoteGenerator.from_interval(
-                            root=root,
-                            interval=Interval(interval),
-                            use_flats=use_flats,
-                        ),
-                        root=root,
-                        degree=degree,
-                        interval=Interval(interval),
-                    )
-                )
-            degree += 1
+            )
+            ctr += 1
 
         return scale
