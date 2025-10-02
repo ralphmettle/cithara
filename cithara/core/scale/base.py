@@ -4,7 +4,7 @@ from cithara.core.interval import Interval
 from cithara.core.contextualised_note import ScaleDegree
 
 # Mapping of scale varieties to their interval patterns from the root
-# NOTE: modes are handled internally by scales (hence "minor" not being included here)
+# NOTE: modes are to be handled internally by scales (hence "minor" not being included here)
 SCALE_FORMULA: dict[str, list[int]] = {
     "major": [0, 2, 4, 5, 7, 9, 11],
     "harmonic_minor": [0, 2, 3, 5, 7, 8, 11],
