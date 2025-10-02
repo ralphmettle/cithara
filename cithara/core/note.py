@@ -88,11 +88,11 @@ class PitchTransformer:
 
     @staticmethod
     def sharpen(canonise: bool = True, use_flats: bool = False):
-        return
+        pass
 
     @staticmethod
     def flatten(canonise: bool = True, use_flats: bool = False):
-        return
+        pass
 
 
 class NoteGenerator:
@@ -101,19 +101,20 @@ class NoteGenerator:
         return Note(note_name_from_pitch_class(pitch_class, use_flats))
 
     @staticmethod
-    def from_interval(root: Note, interval: Interval, natural: str = "", use_flats: bool = True) -> Note:
+    def from_interval(
+        root: Note, interval: Interval, natural: str = "", use_flats: bool = True
+    ) -> Note:
         target_pitch = (root.pitch_class + interval.semitones) % 12
         if not natural:
             return NoteGenerator.from_pitch_class(target_pitch, use_flats)
         else:
             return NoteGenerator.from_natural(target_pitch, natural)
-    
+
     @staticmethod
     def from_natural(pitch_class: int, natural: str) -> Note:
         return Note(note_name_from_natural(pitch_class, natural))
 
 
-# Likely needs a lot of work
 def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True) -> str:
     pitch_class = pitch_class % 12
     if pitch_class in PITCH_TO_NATURAL:
@@ -130,6 +131,7 @@ def note_name_from_pitch_class(pitch_class: int, use_flats: bool = True) -> str:
 
     # If for some reason it fails to enter the conditionals
     raise ValueError(f"Invalid input: {pitch_class}")
+
 
 def note_name_from_natural(pitch_class: int, natural: str) -> str:
     diff = (pitch_class - NATURAL_PITCHES[natural]) % 12

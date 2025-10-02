@@ -39,6 +39,7 @@ class ScaleDegree(ContextualisedNote):
 
 class ChordTone(ContextualisedNote):
     def __init__(self, note: Note, root: Note, tone: int, interval: Interval) -> None:
+        super().__init__(note=note, root=root)
         if tone < 0 or tone > 12:
             raise ValueError("Chord tones must be between 0 and 12 (0-indexing used)")
         super().__init__(note=note, root=root)
@@ -49,7 +50,7 @@ class ChordTone(ContextualisedNote):
         return f"{self.note.note_name} (root: {self.root.note_name} tone: {self.tone})"
 
     def __repr__(self) -> str:
-        return f"<ScaleDegree(tone={self.tone}, note='{self.note.note_name}', root='{self.root.note_name}', interval='{self.interval.interval_name}')>"
+        return f"<ChordTone(tone={self.tone}, note='{self.note.note_name}', root='{self.root.note_name}', interval='{self.interval.interval_name}')>"
 
 
 c = ChordTone(Note("C"), Note("C"), 0, Interval(0))

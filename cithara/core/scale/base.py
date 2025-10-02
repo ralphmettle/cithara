@@ -24,7 +24,6 @@ class Scale(ABC):
         self.notes: list[ScaleDegree] = ScaleBuilder.build(
             root=self.root, formula=self.formula
         )
-        
 
         # 0-indexed method of getting a specifc scale degree
         @classmethod
@@ -40,39 +39,6 @@ class Scale(ABC):
         return [deg.note.note_name for deg in self.notes]
 
 
-# class ScaleBuilder:
-#     @staticmethod
-#     def build(
-#         root: Note, formula: list[int], use_flats: bool = True
-#     ) -> list[ScaleDegree]:
-#         scale = []
-#         degree = 0
-#         for interval in formula:
-#             if interval == 0:
-#                 scale.append(
-#                     ScaleDegree(
-#                         note=root, root=root, degree=degree, interval=Interval(interval)
-#                     )
-#                 )
-#             else:
-#                 scale.append(
-#                     ScaleDegree(
-#                         note=NoteGenerator.from_interval(
-#                             root=root,
-#                             interval=Interval(interval),
-#                             use_flats=use_flats,
-#                         ),
-#                         root=root,
-#                         degree=degree,
-#                         interval=Interval(interval),
-#                     )
-#                 )
-#             degree += 1
-
-#         return scale
-
-
-# redo scale builder method to name appropriately
 class ScaleBuilder:
     @staticmethod
     def build(root: Note, formula: list[int]) -> list[ScaleDegree]:

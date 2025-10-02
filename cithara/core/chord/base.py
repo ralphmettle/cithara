@@ -5,70 +5,116 @@ from cithara.core.note import Note, NoteGenerator
 
 # Representation of chord tones as intervals from root
 CHORD_FORMULA: dict[str, list[int]] = {
-    "major": [0, 4, 7],
-    "minor": [0, 3, 7],
-    "diminished": [0, 3, 6],
-    "augmented": [0, 4, 8],
+    "minor": (0, 3, 7),
+    "major": (0, 4, 7),
+    "diminished": (0, 3, 6),
+    "augmented": (0, 4, 8),
 }
 
 
 class Chord(ABC):
-    def __init__(self, root: Note, type: str, use_flats: bool = True) -> None:
+    def __init__(self, root: Note, type: str) -> None:
         self.root: Note = root
         self.type: str = type
-        self.formula: list[int] = CHORD_FORMULA.get(self.type, [])
-        self.notes: list[ChordTone] = ChordBuilder.build(root=self.root, formula=self.formula, use_flats=use_flats)
-        self.tones = [note.note.note_name for note in self.notes]
-        # i.e. triad, 4 note, etc.
-        self.form: int = len(self.notes)
+        self.formula: tuple[int] = CHORD_FORMULA.get(self.type, [])
+        self._root_position: tuple[ChordTone] = tuple(ChordBuilder.build(
+            root=self.root, formula=self.formula
+        ))
+        self.tones: tuple[ChordTone] = list(self._root_position)
+        self.notes: list[str] = [tone.note.note_name for tone in self.tones]
+        # inversion type
+        self.form: str = "root position"
 
+    def invert(self, inversion: int) -> None:
+        if inversion > len(self) - 1:
+            raise ValueError("Inversion cannot be larger than the number of tones (0-indexed)")
+        if inversion < 0:
+            raise ValueError("Inversion must be greater than 0")
+        inverted: list[str] = []
+        ctr = 0
+        while ctr < len(self):
+            inverted.append(self._root_position[inversion])
+            inversion = (inversion + 1) % len(self)
+            ctr += 1
+        self.tones = inverted
+        self.notes = [tone.note.note_name for tone in inverted]
+        match inversion:
+            case 0:
+                self.form = "root position"
+            case 1:
+                self.form = "first inversion"
+            case 2:
+                self.form = "second inversion"
+            case 3:
+                self.form = "third inversion"
+        
+    def __repr__(self):
+        return f"<{self.__class__.__name__}: {self.notes}>"
+
+    def __str__(self):
+        return f"{self.root.note_name} {self.type}{ f" ({self.form})" if self.form != "root position" else ""}: {", ".join(self.notes)}"
+    
+    def __eq__(self, other: "Chord") -> bool:
+        if isinstance(other, Note):
+            return set(self.notes) == set(other.notes)
+        return NotImplemented
+
+    def __len__(self):
+        return len(self.notes)
 
 class MajorChord(Chord):
-    def __init__(self, root: Note, use_flats: bool = True):
-        super().__init__(root=root, type="major", use_flats=use_flats)
-        
+    def __init__(self, root: Note):
+        super().__init__(root=root, type="major")
+
 
 class MinorChord(Chord):
-    def __init__(self, root: Note, use_flats: bool = True):
-        super().__init__(root=root, type="minor", use_flats=use_flats)
+    def __init__(self, root: Note):
+        super().__init__(root=root, type="minor")
 
 
 class DiminishedChord(Chord):
-    def __init__(self, root: Note, use_flats: bool = True):
-        super().__init__(root=root, type="diminished", use_flats=use_flats)
+    def __init__(self, root: Note):
+        super().__init__(root=root, type="diminished")
 
 
 class AugmentedChord(Chord):
-    def __init__(self, root: Note, use_flats: bool = True):
-        super().__init__(root=root, type="augmented", use_flats=use_flats)
+    def __init__(self, root: Note):
+        super().__init__(root=root, type="augmented")
 
 
 class ChordBuilder:
     @staticmethod
-    def build(
-        root: Note, formula: list[int], use_flats: bool = True
-    ) -> list[ChordTone]:
+    def build(root: Note, formula: list[int]) -> list[ChordTone]:
+        note_ref = ["C", "D", "E", "F", "G", "A", "B"]
+        ctr = 0
+        start = note_ref.index(root.natural)
+
         chord = []
-        tone = 0
-        for tone in formula:
-            if tone == 0:
-                chord.append(
-                    ChordTone(
-                        note=root, root=root, tone=tone, interval=Interval(tone)
-                    )
-                )
-            else:
-                chord.append(
-                    ChordTone(
-                        note=NoteGenerator.from_interval(
-                            root=root,
-                            interval=Interval(tone),
-                            use_flats=use_flats,
-                        ),
-                        root=root,
-                        tone=tone,
-                        interval=Interval(tone),
-                    )
-                )
-        
+        for interval in formula:
+            letter = note_ref[(start + ctr) % 7]
+            note = NoteGenerator.from_interval(
+                root=root, interval=Interval(interval), natural=letter
+            )
+            chord.append(
+                ChordTone(note=note, root=root, tone=ctr, interval=Interval(interval))
+            )
+            ctr += 2
+
         return chord
+
+
+if __name__ == "__main__":
+    maj = MajorChord(Note("C"))
+    print(maj)
+
+    mnr = MinorChord(Note("C"))
+    print(mnr)
+
+    dim = DiminishedChord(Note("C"))
+    print(dim)
+
+    aug = AugmentedChord(Note("C"))
+    print(aug)
+
+    maj.invert(1)
+    print(maj)
